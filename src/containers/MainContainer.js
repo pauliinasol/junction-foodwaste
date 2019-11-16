@@ -4,7 +4,7 @@ import { Search } from "semantic-ui-react";
 import Cupboard from "../Cupboard";
 import { Nav } from "../components/Nav/Nav";
 import { RecipeView } from "../components/RecipeView/RecipeView";
-import {recipes} from '../components/RecipeCard/mockData';
+import { recipes } from "../components/RecipeCard/mockData";
 
 const Wrapper = styled.div``;
 
@@ -22,22 +22,19 @@ const Layout = styled.div`
   /* justify-content: space-between; */
 `;
 
-// const SearchStyle = styled(Card)`
-//   display: flex;
-//   justify-content: flex-end;
-// `;
-
 const CupboardStyle = styled(Card)`
   padding: 20px;
   display: flex;
   flex-grow: 1;
   max-width: 300px;
   background-color: #fff9f2;
+  height: 100vh;
 `;
 
 const RecipeFeed = styled(Card)`
   display: flex;
   flex-grow: 3;
+  max-height: 250px;
 `;
 
 const MainContainer = () => {
@@ -50,7 +47,7 @@ const MainContainer = () => {
         </CupboardStyle>
 
         <RecipeFeed>
-          <RecipeView recipes={recipes.recipes}/>
+          <RecipeView recipes={recipes.recipes} />
         </RecipeFeed>
       </Layout>
     </Wrapper>
