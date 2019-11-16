@@ -20,7 +20,6 @@ function Cupboard() {
     setNewIngredient(event.target.value)
   }
 
-  console.log(existingIngredients)
   return (
     <div>
       <ul>{ingredients}</ul>
