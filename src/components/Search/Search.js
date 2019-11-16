@@ -39,19 +39,21 @@ export const Search = () => {
   return (
     <SearchContainer>
       <SearchRow>
-        <form onSubmit={addIngredient}>
-          <InputStyle>
-            <Input 
+        <InputStyle>
+          <form onSubmit={addIngredient}>
+            <Input style={{paddingRight: "5px"}}
               value={newIngredient}
               onChange={handleIngredientChange}
             />
-          </InputStyle>
-          <Button type="submit">+</Button>
-        </form>
-      <Button>Search</Button>
+            <Button type="submit">+</Button>
+          </form>
+        </InputStyle>
       </SearchRow>
       <SearchRow>
         {ingredients.map((ing) => <Label onClick={() => removeElem(ing)} as="a" key={ing}>{ing}</Label>)}
+      </SearchRow>
+      <SearchRow>
+        <Button>Search</Button>
       </SearchRow>
     </SearchContainer>
   );
