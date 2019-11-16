@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Search } from "semantic-ui-react";
-import Cupboard from "../Cupboard";
+import Cupboard from "../components/Cupboard/Cupboard";
 import { Nav } from "../components/Nav/Nav";
 import { RecipeView } from "../components/RecipeView/RecipeView";
 
