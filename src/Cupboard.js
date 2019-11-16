@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Cupboard() {
+  const [existinIngredients] = useState(["flour", "sugar", "soya sauce"]);
+
+  const ingredients = existinIngredients.map((item) => {
+    return (
+      <li>{item}</li>
+    )
+  })
+
   return (
-    <div>This is what you currently have in your cupboard</div>
-  );
+    <ul>{ingredients}</ul>
+  )
 }
 
 export default Cupboard;
