@@ -7,24 +7,13 @@ import { RecipeView } from "../components/RecipeView/RecipeView";
 
 const Wrapper = styled.div``;
 
-const Card = styled.div`
-  /* border-radius: 10px; */
-  /* padding: 50px;
-  margin: 20px; */
-  /* background-color: #f86700; */
-`;
+const Card = styled.div``;
 
 const Layout = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  /* justify-content: space-between; */
 `;
-
-// const SearchStyle = styled(Card)`
-//   display: flex;
-//   justify-content: flex-end;
-// `;
 
 const CupboardStyle = styled(Card)`
   padding: 20px;
@@ -48,7 +37,6 @@ const MainContainer = () => {
         <CupboardStyle>
           <Cupboard />
         </CupboardStyle>
-
         <RecipeFeed>
           <RecipeView />
         </RecipeFeed>
