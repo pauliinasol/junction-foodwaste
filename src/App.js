@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import styled from "styled-components";
 import { Search } from "semantic-ui-react";
+import Cupboard from './Cupboard'
 
 const Card = styled.div`
   border-radius: 10px;
@@ -36,7 +37,9 @@ function App() {
         <Search></Search>
       </SearchStyle>
       <Layout>
-        <Card>This is what you currently have in your cupboard</Card>
+        <Card>
+          <Cupboard />
+        </Card>
         <Card>
           <RecipeFeed>This is the list of recipes</RecipeFeed>
         </Card>
