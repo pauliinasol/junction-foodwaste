@@ -6,12 +6,6 @@ export const RecipeViewStyle = styled.div`
   padding: 20px;
 `;
 
-export const RecipeView = () => {
-  return (
-    <RecipeViewStyle>
-      <RecipeCard />
-      {/* <RecipeCard />
-      <RecipeCard /> */}
-    </RecipeViewStyle>
-  );
+export const RecipeView = ({recipes}) => {
+  return recipes.map((recipe) => <RecipeCard key={recipe.heading} recipe={recipe} />)
 };
