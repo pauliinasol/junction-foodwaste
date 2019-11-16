@@ -6,9 +6,16 @@ function Cupboard() {
 
   const ingredients = existingIngredients.map((item) => {
     return (
-      <li key={item}>{item}</li>
+      <li key={item}>
+        {item} <button onClick={() => handleRemove(item)}>Remove</button>
+      </li>
     )
   })
+
+  const handleRemove = (item) => {
+    let newIngs = existingIngredients.filter(ing => ing !== item)
+    setExistingIngredients(newIngs);
+  }
 
   const addIngridient = (event) => {
     event.preventDefault()
