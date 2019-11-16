@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Input, Button, List, Icon } from 'semantic-ui-react'
 
 function Cupboard() {
-  const [existingIngredients, setExistingIngredients] = useState(["flour", "sugar", "soya sauce"]);
+  const [existingIngredients, setExistingIngredients] = useState(["Flour", "Sugar", "Soya sauce"]);
   const [newIngredient, setNewIngredient] = useState("");
 
   const ingredients = existingIngredients.map((item) => {
