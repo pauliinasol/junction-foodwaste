@@ -21,13 +21,11 @@ export const RecipeView = ({ recipes }) => {
         <Search />
       </SearchStyle>
       <RecipeViewStyle>
-        {recipes.map((recipe) => {
-          return (
-            <Card.Group>
-              <RecipeCard key={recipe.heading} recipe={recipe} />
-            </Card.Group>
-          )
-        })}
+        {recipes.map((recipe) =>
+          <Card.Group>
+            <RecipeCard key={recipe.heading} recipe={recipe} />
+          </Card.Group>
+        )}
       </RecipeViewStyle>
     </div>
   )
