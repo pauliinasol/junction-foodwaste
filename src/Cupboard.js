@@ -1,14 +1,23 @@
 import React, { useState } from "react";
+import { Input, Button, List, Icon } from 'semantic-ui-react'
 
 function Cupboard() {
-  const [existingIngredients, setExistingIngredients] = useState(["flour", "sugar", "soya sauce"]);
+  const [existingIngredients, setExistingIngredients] = useState(["Flour", "Sugar", "Soya sauce"]);
   const [newIngredient, setNewIngredient] = useState("");
 
   const ingredients = existingIngredients.map((item) => {
     return (
-      <li key={item}>{item}</li>
+      <List.Item key={item}>
+        <Button icon onClick={() => handleRemove(item)}><Icon name="trash"/></Button>
+        {item} 
+      </List.Item>
     )
   })
+
+  const handleRemove = (item) => {
+    let newIngs = existingIngredients.filter(ing => ing !== item)
+    setExistingIngredients(newIngs);
+  }
 
   const addIngridient = (event) => {
     event.preventDefault()
@@ -20,16 +29,15 @@ function Cupboard() {
     setNewIngredient(event.target.value)
   }
 
-  console.log(existingIngredients)
   return (
     <div>
-      <ul>{ingredients}</ul>
+      <List>{ingredients}</List>
       <form onSubmit={addIngridient}>
-        <input 
+        <Input 
           value={newIngredient}
           onChange={handleIngredientChange} 
         />
-        <button type="submit">Add ingridient</button>
+        <Button type="submit">Add ingridient</Button>
       </form>
     </div>
   )
