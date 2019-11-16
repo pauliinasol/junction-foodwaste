@@ -9,6 +9,7 @@ const Card = styled.div`
   padding: 50px;
   margin: 20px;
   background-color: #f86700;
+  width: 100%;
 `;
 
 const Layout = styled.div`
@@ -21,6 +22,7 @@ const Layout = styled.div`
 const SearchStyle = styled(Card)`
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 `;
 
 const RecipeFeed = styled.div`
@@ -36,7 +38,7 @@ function App() {
         <Search></Search>
       </SearchStyle>
       <Layout>
-        <Card>This is what you currently have in your cupboard</Card>
+        <Card>This is what you currently have</Card>
         <Card>
           <RecipeFeed>This is the list of recipes</RecipeFeed>
         </Card>
