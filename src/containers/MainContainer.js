@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Search } from "semantic-ui-react";
+import Cupboard from '../Cupboard'
 
 const Wrapper = styled.div`
 
@@ -36,7 +37,9 @@ const MainContainer = () => {
             <Search></Search>
         </SearchStyle>
         <Layout>
-            <Card>This is what you currently have in your cupboard</Card>
+            <Card>
+              <Cupboard />
+            </Card>
             <Card>
             <RecipeFeed>This is the list of recipes</RecipeFeed>
             </Card>
