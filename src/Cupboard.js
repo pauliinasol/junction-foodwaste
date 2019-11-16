@@ -1,16 +1,37 @@
 import React, { useState } from "react";
 
 function Cupboard() {
-  const [existinIngredients] = useState(["flour", "sugar", "soya sauce"]);
+  const [existingIngredients, setExistingIngredients] = useState(["flour", "sugar", "soya sauce"]);
+  const [newIngredient, setNewIngredient] = useState("");
 
-  const ingredients = existinIngredients.map((item) => {
+  const ingredients = existingIngredients.map((item) => {
     return (
-      <li>{item}</li>
+      <li key={item}>{item}</li>
     )
   })
 
+  const addIngridient = (event) => {
+    event.preventDefault()
+    setExistingIngredients(existingIngredients.concat(newIngredient))
+    setNewIngredient('')
+  }
+
+  const handleIngredientChange = (event) => {
+    setNewIngredient(event.target.value)
+  }
+
+  console.log(existingIngredients)
   return (
-    <ul>{ingredients}</ul>
+    <div>
+      <ul>{ingredients}</ul>
+      <form onSubmit={addIngridient}>
+        <input 
+          value={newIngredient}
+          onChange={handleIngredientChange} 
+        />
+        <button type="submit">Add ingridient</button>
+      </form>
+    </div>
   )
 }
 
