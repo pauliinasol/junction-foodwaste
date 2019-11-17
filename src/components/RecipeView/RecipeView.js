@@ -21,12 +21,12 @@ export const RecipeView = ({ recipes }) => {
         <Search />
       </SearchStyle>
       <RecipeViewStyle>
-        {recipes.map((recipe) =>
-          <Card.Group>
+        <Card.Group>
+          {recipes.map(recipe => (
             <RecipeCard key={recipe.heading} recipe={recipe} />
-          </Card.Group>
-        )}
+          ))}
+        </Card.Group>
       </RecipeViewStyle>
     </div>
-  )
+  );
 };
