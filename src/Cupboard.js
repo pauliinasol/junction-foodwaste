@@ -21,6 +21,7 @@ function Cupboard({ values, onAdd, onRemove }) {
 
   const handleSubmit = () => {
     onAdd(newIngredient);
+    setNewIngredient('')
   };
 
   return (
