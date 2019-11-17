@@ -17,6 +17,12 @@ export const InputStyle = styled.div`
   padding-right: 5px;
 `;
 
+const HeaderStyle = styled.div`
+font-weight: bold;
+padding-bottom: 10px;
+padding-top: 10px;
+`
+
 export const Search = () => {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
@@ -40,6 +46,7 @@ export const Search = () => {
     <SearchContainer>
       <SearchRow>
         <InputStyle>
+        <HeaderStyle>Add search tags</HeaderStyle>
           <form onSubmit={addIngredient}>
             <Input
               style={{ paddingRight: "5px" }}
