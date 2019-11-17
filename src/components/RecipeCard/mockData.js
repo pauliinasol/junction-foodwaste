@@ -7,8 +7,8 @@ export const recipes = {
       diffucultyLevel: "easy",
       instructions: "Do this by just adding the ingredients to the bowl etc",
       ingredients:  [
-        "flour", 
-        "sugar"
+        "pasta", 
+        "meat"
       ]
     },
     {
@@ -18,7 +18,7 @@ export const recipes = {
       diffucultyLevel: "hard",
       instructions: "Do this by just adding the ingredients to the bowl etc",
       ingredients:  [
-        "flour", 
+        "steak", 
         "soya sauce"
       ]
     },
@@ -30,6 +30,29 @@ export const recipes = {
       instructions: "Do this by just adding the ingredients to the bowl etc",
       ingredients:  [
         "sugar", 
+        "salmon"
+      ]
+    },
+    {
+      heading: "chicken",
+      img:
+        "https://hips.hearstapps.com/hmg-prod/images/190508-instant-pot-chicken-and-rice-horizontal-3-1558017055.png",
+      diffucultyLevel: "moderate",
+      instructions: "Do this by just adding the ingredients to the bowl etc",
+      ingredients:  [
+        "chicken", 
+        "rice"
+      ]
+    },
+    {
+      heading: "poke bowl",
+      img:
+        "https://supervalu.ie/thumbnail/720x400/var/files/recipes/SuperValu_TheHappyPear_SummerHawaiianPokeBowl.jpg?fill=1",
+      diffucultyLevel: "moderate",
+      instructions: "Do this by just adding the ingredients to the bowl etc",
+      ingredients:  [
+        "soya souce", 
+        "salmon"
       ]
     }
   ]
