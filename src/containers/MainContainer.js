@@ -51,6 +51,12 @@ const MainContainer = () => {
     // cupboardItems
     setSearchResults();
   };
+
+  const onRemoveSearchItems = () => {
+    // cupboardItems
+    setSearchResults();
+  };
+
   return (
     <Wrapper>
       <Nav />
@@ -65,9 +71,10 @@ const MainContainer = () => {
         <RecipeFeed>
           <RecipeView
             recipes={recipes.recipes}
-            // onTagAdd={}
+            onTagAdd={onExecuteSearch}
+            onRemove={onRemoveSearchItems}
             onExecuteSearch={onExecuteSearch}
-            // searchResults=
+            searchResults={searchResults}
           />
         </RecipeFeed>
       </Layout>
