@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Input, Button, Label } from "semantic-ui-react";
 
@@ -18,30 +18,31 @@ export const InputStyle = styled.div`
 `;
 
 export const Search = () => {
-  const [ingredients, setIngredients] = useState([])
-  const [newIngredient, setNewIngredient] = useState('')
+  const [ingredients, setIngredients] = useState([]);
+  const [newIngredient, setNewIngredient] = useState("");
 
-  const addIngredient = (event) => {
-    event.preventDefault()
-    setIngredients(ingredients.concat(newIngredient))
-    setNewIngredient('')
-  }
+  const addIngredient = event => {
+    event.preventDefault();
+    setIngredients(ingredients.concat(newIngredient));
+    setNewIngredient("");
+  };
 
-  const handleIngredientChange = (event) => {
-    setNewIngredient(event.target.value)
-  }
+  const handleIngredientChange = event => {
+    setNewIngredient(event.target.value);
+  };
 
-  const removeElem = (item) => {
-    let newIng = ingredients.filter(ing => ing !== item)
-    setIngredients(newIng)
-  }
-  
+  const removeElem = item => {
+    let newIng = ingredients.filter(ing => ing !== item);
+    setIngredients(newIng);
+  };
+
   return (
     <SearchContainer>
       <SearchRow>
         <InputStyle>
           <form onSubmit={addIngredient}>
-            <Input style={{paddingRight: "5px"}}
+            <Input
+              style={{ paddingRight: "5px" }}
               value={newIngredient}
               onChange={handleIngredientChange}
             />
@@ -50,7 +51,11 @@ export const Search = () => {
         </InputStyle>
       </SearchRow>
       <SearchRow>
-        {ingredients.map((ing) => <Label onClick={() => removeElem(ing)} as="a" key={ing}>{ing}</Label>)}
+        {ingredients.map(ing => (
+          <Label onClick={() => removeElem(ing)} as="a" key={ing}>
+            {ing}
+          </Label>
+        ))}
       </SearchRow>
       <SearchRow>
         <Button>Search</Button>

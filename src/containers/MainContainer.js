@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Search } from "semantic-ui-react";
 import Cupboard from "../Cupboard";
@@ -32,15 +32,43 @@ const RecipeFeed = styled(Card)`
 `;
 
 const MainContainer = () => {
+  const [cupboardItems, setCupboardItems] = useState([
+    "Flour",
+    "Sugar",
+    "Soya sauce"
+  ]);
+
+  const [searchResults, setSearchResults] = useState();
+
+  const addCupboardItem = item => {
+    setCupboardItems([...cupboardItems, item]);
+  };
+  const removeCupboardItem = item => {
+    setCupboardItems(cupboardItems.filter(u => u !== item));
+  };
+
+  const onExecuteSearch = () => {
+    // cupboardItems
+    setSearchResults();
+  };
   return (
     <Wrapper>
       <Nav />
       <Layout>
         <CupboardStyle>
-          <Cupboard />
+          <Cupboard
+            values={cupboardItems}
+            onAdd={addCupboardItem}
+            onRemove={removeCupboardItem}
+          />
         </CupboardStyle>
         <RecipeFeed>
-          <RecipeView recipes={recipes.recipes} />
+          <RecipeView
+            recipes={recipes.recipes}
+            // onTagAdd={}
+            onExecuteSearch={onExecuteSearch}
+            // searchResults=
+          />
         </RecipeFeed>
       </Layout>
     </Wrapper>
